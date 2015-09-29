@@ -1,5 +1,0 @@
-_assetic:
-    resource: .
-    type: assetic
-_app:
-    resource: /Users/pierre/code/lib/playapi/app/config/routing_dev.yml
