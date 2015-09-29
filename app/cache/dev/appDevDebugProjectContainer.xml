@@ -19,6 +19,7 @@
       <parameter key="AppBundle">AppBundle\AppBundle</parameter>
       <parameter key="FOSRestBundle">FOS\RestBundle\FOSRestBundle</parameter>
       <parameter key="JMSSerializerBundle">JMS\SerializerBundle\JMSSerializerBundle</parameter>
+      <parameter key="DoctrineMigrationsBundle">Doctrine\Bundle\MigrationsBundle\DoctrineMigrationsBundle</parameter>
       <parameter key="DebugBundle">Symfony\Bundle\DebugBundle\DebugBundle</parameter>
       <parameter key="WebProfilerBundle">Symfony\Bundle\WebProfilerBundle\WebProfilerBundle</parameter>
       <parameter key="SensioDistributionBundle">Sensio\Bundle\DistributionBundle\SensioDistributionBundle</parameter>
@@ -645,6 +646,10 @@
     <parameter key="jms_serializer.doctrine_proxy_subscriber.class">JMS\Serializer\EventDispatcher\Subscriber\DoctrineProxySubscriber</parameter>
     <parameter key="jms_serializer.stopwatch_subscriber.class">JMS\SerializerBundle\Serializer\StopwatchEventSubscriber</parameter>
     <parameter key="jms_serializer.infer_types_from_doctrine_metadata">true</parameter>
+    <parameter key="doctrine_migrations.dir_name">/Users/pierre/code/lib/playapi/app/DoctrineMigrations</parameter>
+    <parameter key="doctrine_migrations.namespace">Application\Migrations</parameter>
+    <parameter key="doctrine_migrations.table_name">migration_versions</parameter>
+    <parameter key="doctrine_migrations.name">Application Migrations</parameter>
     <parameter key="web_profiler.controller.profiler.class">Symfony\Bundle\WebProfilerBundle\Controller\ProfilerController</parameter>
     <parameter key="web_profiler.controller.router.class">Symfony\Bundle\WebProfilerBundle\Controller\RouterController</parameter>
     <parameter key="web_profiler.controller.exception.class">Symfony\Bundle\WebProfilerBundle\Controller\ExceptionController</parameter>
@@ -1858,7 +1863,7 @@
       <argument type="collection">
         <argument type="service">
           <service class="Symfony\Component\Security\Core\Authentication\Provider\AnonymousAuthenticationProvider" public="false">
-            <argument>560af674e54e85.11730707</argument>
+            <argument>560af6eb9a50f0.47407367</argument>
           </service>
         </argument>
       </argument>
@@ -1981,7 +1986,7 @@
         <argument type="service">
           <service class="Symfony\Component\Security\Http\Firewall\AnonymousAuthenticationListener" public="false">
             <argument type="service" id="security.token_storage"/>
-            <argument>560af674e54e85.11730707</argument>
+            <argument>560af6eb9a50f0.47407367</argument>
             <argument type="service" id="monolog.logger.security" on-invalid="null"/>
             <argument type="service" id="security.authentication.manager"/>
           </service>
@@ -3605,6 +3610,7 @@
                       <argument key="AppBundle">/Users/pierre/code/lib/playapi/src/AppBundle/Resources/config/serializer</argument>
                       <argument key="FOS\RestBundle">/Users/pierre/code/lib/playapi/vendor/friendsofsymfony/rest-bundle/FOS/RestBundle/Resources/config/serializer</argument>
                       <argument key="JMS\SerializerBundle">/Users/pierre/code/lib/playapi/vendor/jms/serializer-bundle/JMS/SerializerBundle/Resources/config/serializer</argument>
+                      <argument key="Doctrine\Bundle\MigrationsBundle">/Users/pierre/code/lib/playapi/vendor/doctrine/doctrine-migrations-bundle/Resources/config/serializer</argument>
                       <argument key="Symfony\Bundle\DebugBundle">/Users/pierre/code/lib/playapi/vendor/symfony/symfony/src/Symfony/Bundle/DebugBundle/Resources/config/serializer</argument>
                       <argument key="Symfony\Bundle\WebProfilerBundle">/Users/pierre/code/lib/playapi/vendor/symfony/symfony/src/Symfony/Bundle/WebProfilerBundle/Resources/config/serializer</argument>
                       <argument key="Sensio\Bundle\DistributionBundle">/Users/pierre/code/lib/playapi/vendor/sensio/distribution-bundle/Sensio/Bundle/DistributionBundle/Resources/config/serializer</argument>
@@ -3630,6 +3636,7 @@
                       <argument key="AppBundle">/Users/pierre/code/lib/playapi/src/AppBundle/Resources/config/serializer</argument>
                       <argument key="FOS\RestBundle">/Users/pierre/code/lib/playapi/vendor/friendsofsymfony/rest-bundle/FOS/RestBundle/Resources/config/serializer</argument>
                       <argument key="JMS\SerializerBundle">/Users/pierre/code/lib/playapi/vendor/jms/serializer-bundle/JMS/SerializerBundle/Resources/config/serializer</argument>
+                      <argument key="Doctrine\Bundle\MigrationsBundle">/Users/pierre/code/lib/playapi/vendor/doctrine/doctrine-migrations-bundle/Resources/config/serializer</argument>
                       <argument key="Symfony\Bundle\DebugBundle">/Users/pierre/code/lib/playapi/vendor/symfony/symfony/src/Symfony/Bundle/DebugBundle/Resources/config/serializer</argument>
                       <argument key="Symfony\Bundle\WebProfilerBundle">/Users/pierre/code/lib/playapi/vendor/symfony/symfony/src/Symfony/Bundle/WebProfilerBundle/Resources/config/serializer</argument>
                       <argument key="Sensio\Bundle\DistributionBundle">/Users/pierre/code/lib/playapi/vendor/sensio/distribution-bundle/Sensio/Bundle/DistributionBundle/Resources/config/serializer</argument>
@@ -3655,6 +3662,7 @@
                       <argument key="AppBundle">/Users/pierre/code/lib/playapi/src/AppBundle/Resources/config/serializer</argument>
                       <argument key="FOS\RestBundle">/Users/pierre/code/lib/playapi/vendor/friendsofsymfony/rest-bundle/FOS/RestBundle/Resources/config/serializer</argument>
                       <argument key="JMS\SerializerBundle">/Users/pierre/code/lib/playapi/vendor/jms/serializer-bundle/JMS/SerializerBundle/Resources/config/serializer</argument>
+                      <argument key="Doctrine\Bundle\MigrationsBundle">/Users/pierre/code/lib/playapi/vendor/doctrine/doctrine-migrations-bundle/Resources/config/serializer</argument>
                       <argument key="Symfony\Bundle\DebugBundle">/Users/pierre/code/lib/playapi/vendor/symfony/symfony/src/Symfony/Bundle/DebugBundle/Resources/config/serializer</argument>
                       <argument key="Symfony\Bundle\WebProfilerBundle">/Users/pierre/code/lib/playapi/vendor/symfony/symfony/src/Symfony/Bundle/WebProfilerBundle/Resources/config/serializer</argument>
                       <argument key="Sensio\Bundle\DistributionBundle">/Users/pierre/code/lib/playapi/vendor/sensio/distribution-bundle/Sensio/Bundle/DistributionBundle/Resources/config/serializer</argument>
