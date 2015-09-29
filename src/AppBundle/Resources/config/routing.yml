@@ -1,0 +1,20 @@
+
+get_articles:
+    path:     /articles
+    defaults: { _controller: AppBundle:Articles:getArticles }
+
+get_article:
+    path:     /articles/{id}
+    defaults: { _controller: AppBundle:Articles:getArticle }
+
+post_article:
+    path:     /articles
+    defaults: { _controller: AppBundle:Articles:postArticle }
+
+put_article:
+    path:     /articles
+    defaults: { _controller: AppBundle:Articles:putArticle }
+
+delete_article:
+    path:     /articles
+    defaults: { _controller: AppBundle:Articles:deleteArticle }

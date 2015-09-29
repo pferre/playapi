@@ -1,0 +1,4 @@
+blog_api:
+    type: rest
+    prefix: /api
+    resource: @AppBundle/Resources/config/api_routing.yml
