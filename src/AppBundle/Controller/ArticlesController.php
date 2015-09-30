@@ -42,7 +42,8 @@ class ArticlesController extends FOSRestController
             $article
         );
 
-        $form->handleRequest($request);
+        $data = json_decode($request->getContent(), true);
+        $form->submit($data);
 
         $errors = $this->get('validator')->validate($article);
 
