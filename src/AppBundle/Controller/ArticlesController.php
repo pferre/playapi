@@ -37,6 +37,56 @@ class ArticlesController extends FOSRestController
     {
         $article = new Article();
 
+        $errors = $this->createAndSubmitForm($request, $article);
+
+        if (count($errors) > 0) {
+            return $this->view(
+                $errors,
+                Response::HTTP_UNPROCESSABLE_ENTITY
+            );
+        }
+
+        $this->persist($article);
+
+        return $this->view($article, Response::HTTP_CREATED);
+    }
+
+    /**
+     * @param Request $request
+     * @param Article $article
+     * @return \FOS\RestBundle\View\View
+     */
+    public function putArticlesAction(Request $request, Article $article)
+    {
+        $errors = $this->createAndSubmitForm($request, $article);
+
+        if (count($errors) > 0) {
+            return $this->view(
+                $errors,
+                Response::HTTP_UNPROCESSABLE_ENTITY
+            );
+        }
+
+        $this->persist($article);
+
+        return $this->view($article, Response::HTTP_CREATED);
+    }
+
+    /**
+     * @param Article $article
+     */
+    public function deleteArticlesAction(Article $article)
+    {
+        $this->remove($article);
+    }
+
+    /**
+     * @param Request $request
+     * @param $article
+     * @return \Symfony\Component\Validator\ConstraintViolationListInterface
+     */
+    private function createAndSubmitForm(Request $request, $article)
+    {
         $form = $this->createForm(
             new ArticleType(),
             $article
@@ -46,27 +96,27 @@ class ArticlesController extends FOSRestController
         $form->submit($data);
 
         $errors = $this->get('validator')->validate($article);
+        return $errors;
+    }
 
-        if (count($errors) > 0) {
-            return $this->view(
-                $errors,
-                Response::HTTP_UNPROCESSABLE_ENTITY
-            );
-        }
-
+    /**
+     * @param $article
+     */
+    private function persist($article)
+    {
         $em = $this->getDoctrine()->getManager();
         $em->persist($article);
         $em->flush();
-
-        return $this->view($article, Response::HTTP_CREATED);
     }
 
-    public function putArticlesAction()
+    /**
+     * @param Article $article
+     */
+    private function remove(Article $article)
     {
-    }
-
-    public function deleteArticlesAction()
-    {
+        $em = $this->getDoctrine()->getManager();
+        $em->remove($article);
+        $em->flush();
     }
 
 }
