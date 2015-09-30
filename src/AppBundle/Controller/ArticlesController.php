@@ -11,6 +11,9 @@ use Symfony\Component\HttpFoundation\Response;
 
 class ArticlesController extends FOSRestController
 {
+    /**
+     * @return \AppBundle\Entity\Article[]|array
+     */
     public function getArticlesAction()
     {
         $articles = $this->getDoctrine()
