@@ -59,7 +59,7 @@ class ArticlesController extends FOSRestController
      * @param Article $article
      * @return \FOS\RestBundle\View\View
      */
-    public function putArticlesAction(Request $request, Article $article)
+    public function putArticleAction(Request $request, Article $article)
     {
         $errors = $this->createAndSubmitForm($request, $article);
 
@@ -78,7 +78,7 @@ class ArticlesController extends FOSRestController
     /**
      * @param Article $article
      */
-    public function deleteArticlesAction(Article $article)
+    public function deleteArticleAction(Article $article)
     {
         $this->remove($article);
     }
