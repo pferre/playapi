@@ -112,6 +112,16 @@ class ArticlesControllerTest extends WebTestCase
         $this->assertEquals(422, $this->client->getResponse()->getStatusCode());
     }
 
+    public function test_it_deletes_an_article()
+    {
+        $article = $this->em->getRepository('AppBundle:Article')
+            ->findOneBy(['id' => 1]);
+
+        $this->client->request('DELETE', '/api/articles/'.$article->getId());
+
+        $this->assertEquals(204, $this->client->getResponse()->getStatusCode());
+    }
+
     /**
      * @param $json
      * @return \Symfony\Bundle\FrameworkBundle\Client
