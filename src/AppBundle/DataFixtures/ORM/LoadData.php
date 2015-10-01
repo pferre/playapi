@@ -25,7 +25,7 @@ class LoadData implements FixtureInterface
 
             $article = new Article();
             $article->setTitle($faker->sentence());
-            $article->setBody($faker->paragraph);
+            $article->setBody($faker->paragraph(2));
 
             $manager->persist($article);
             $manager->flush();
